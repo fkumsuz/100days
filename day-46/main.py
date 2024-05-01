@@ -23,10 +23,4 @@ with open("movie.txt", "w", encoding="utf-8") as file:
     for movie in top_100:
         file.write(movie + "\n")
 
-
-# /html/body/div[3]/main/div[2]/div[3]/div/div/div/div[2]/div[2]/ul/li[4]/ul/li[1]/h3
-# /html/body/div[3]/main/div[2]/div[3]/div/div/div/div[2]/div[2]/ul/li[4]/ul/li[1]/h3
-
  
-# /html/body/div[3]/main/div[2]/div[3]/div/div/div/div[2]/div[4]/ul/li[4]/ul/li[1]/h3 
-# /html/body/div[3]/main/div[2]/div[3]/div/div/div/div[2]/div[6]/ul/li[4]/ul/li[1]/h3
