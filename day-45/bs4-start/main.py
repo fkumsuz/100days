@@ -14,21 +14,33 @@ soup = BeautifulSoup(yc_web_page,"html.parser")
 all_scores = soup.find_all(class_="score")
 # print(all_scores)
 
-all_anchors = soup.find (name="span",class_="titleline" )
-print(all_anchors)
-article_text =all_anchors.getText()
-article_link = all_anchors.get("href") 
-print(article_text)
-print(article_link)
+article_span_tag =  soup.find_all('span', class_='titleline') 
+article_texts=[]
+article_links=[]
+for articles in article_span_tag:  
+    article_tag = articles.find('a')  
+    article_link =article_tag.get("href") 
+    article_texts.append(article_tag.getText())
+    print("---------------------------------------")
+    print(article_link)
+    article_links.append(article_link)
+article_upvotes=[]
+article_upvote = soup.find_all (name="span",class_="score" )
+for upvotes in article_upvote: 
+    
+    article_upvotes.append(int(upvotes.getText().split()[0])) 
+print("*************************************************************")
+largest_num = max(article_upvotes)
+largest_index= article_upvotes.index(largest_num)
 
+print(article_texts[largest_index])
 
-# <span class="score" id="score_40190542">117 points</span>
-# <span class="score" id="score_40187656">274 points</span>
-
-  
-#<a href="https://github.com/rejunity/z80-open-silicon">Zilog Z80 CPU – Modern, free and open source silicon clone</a>
-# <a href="https://phys.org/news/2024-04-barley-fine-tune-root-microbial.html">Barley plants fine-tune root microbial communities through sugary secretions</a>
-
+print(article_links[largest_index])
+print( largest_index,largest_num)
+    #  <a href="https://www.esa.int/Science_Exploration/Space_Science/Webb/Webb_captures_iconic_Horsehead_Nebula_in_unprecedented_detail">Webb captures iconic Horsehead Nebula in unprecedented detail</a>
+     
+    # <span class="titleline"><a href="https://codedbearder.com/posts/f3-backplane/">I made a new backplane for my consumer NAS</a><span class="sitebit comhead"> (<a href="from?site=codedbearder.com"><span class="sitestr">codedbearder.com</span></a>)</span></span>
+     
 # with open("website.html","r", encoding="utf-8") as file:
 #     contents= file.read() 
     
