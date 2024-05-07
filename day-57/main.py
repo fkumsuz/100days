@@ -8,7 +8,7 @@ app = Flask(__name__)
 gender_api= "https://api.genderize.io/"
 age_api= "https://api.agify.io"
 
-@app.route('/')
+@app.route('/')  
 def home():
     gender="male"
     age=24
