@@ -16,6 +16,8 @@ def home():
 
 @app.route('/<username>')
 def name(username):
+    gender_api= "https://api.genderize.io/"
+    age_api= "https://api.agify.io"  
     response_age = requests.get(age_api, params={"name": name})
     response_gender = requests.get(gender_api, params={"name": name})
     if response_age.status_code == 200:
