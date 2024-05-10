@@ -9,25 +9,40 @@
 <body>
 <div class="wrapper">
     <div class="top">
-        <div class="title"><h1>My Blog</h1></div>
+        <div class="title"><h1>My Blog</h1></div> 
+        {% for blog_post in posts: %}    
     </div>
-    <div class="content">
-        <div class="card">
-            <h2>Just a blog post</h2>
-            <p class="text">Lorem ipsum dolor sit </p>
-            <a href="#">Read</a>
+    {% if blog_post["id"] == 1: %}
+        <div class="content">
+            <div class="card">
+                <h2>{{ blog_post["title"] }}</h2>
+                <p class="text">{{ blog_post["subtitle"] }} </p>
+                <a href="{{ id  }}">Read</a>
+            </div>
         </div>
-    </div>
-    <div class="content">
-        <div class="card">
-            <h2>Another blog post</h2>
-            <p class="text">Lorem ipsum dolor sit </p>
-            <a href="#">Read</a>
+        {% endif %}
+        {% if blog_post["id"] == 2: %}
+        <div class="content">
+            <div class="card">
+                <h2>{{ blog_post["title"] }}</h2>
+                <p class="text">{{ blog_post["subtitle"] }} </p>
+                <a href="{{ id  }}">Read</a>
+            </div>
         </div>
-    </div>
+        {% endif %}
+        {% if blog_post["id"] == 3: %}
+        <div class="content">
+            <div class="card">
+                <h2>{{ blog_post["title"] }}</h2>
+                <p class="text">{{ blog_post["subtitle"] }} </p>
+                <a href="{{ id  }}">Read</a>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
 </div>
 </body>
 <footer>
-    <p>Made with ♥️ in London.</p>
+    <p>Made with ♥️ in Turkey.</p>
 </footer>
 </html>
