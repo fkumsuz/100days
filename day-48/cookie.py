@@ -24,12 +24,7 @@ def countdown(seconds):
  
 cookie= driver.find_element(By.XPATH,value='//*[@id="cookie"]') 
 store_divs = driver.find_elements(By.ID,value="store") 
-# store_div içindeki tüm div öğelerini bul
-  
-# nested_divs = []
-# for store_div in store_divs:
-#     nested_divs.extend(store_div.find_elements(By.TAG_NAME, "div"))
-# print(nested_divs)
+ 
 store_divs = driver.find_elements(By.XPATH,value="/html/body/div[3]/div[5]/div/div[*]/b") 
 store= []
 for i in store_divs:
@@ -60,29 +55,4 @@ while game_is_on:
         
  
 
- 
- 
-
-# store_divs = driver.find_elements(By.ID,value="store") 
-# # store_div içindeki tüm div öğelerini bul
   
-# nested_divs = []
-# for store_div in store_divs:
-#     nested_divs.extend(store_div.find_elements(By.TAG_NAME, "div"))
-    
-
-# for div in nested_divs:
-#     try: 
-#         result = div.text
-#         result = int(result.replace("\n", "").split("-", 1)[-1].strip()) 
-#     except ValueError:
-#         pass
-#     print(result )  
-#     //*[@id="buyCursor"]/b
-#     //*[@id="buyGrandma"]/b
-#     <div id="buyCursor" onclick="Buy('Cursor');" style="background-image:url(cursoricon.png);" class=""><b>Cursor - <moni></moni> 15</b>Autoclicks every 5 seconds.</div>
-# while game_is_on:
- 
-  
-
-
