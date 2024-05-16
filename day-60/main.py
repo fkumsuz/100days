@@ -1,16 +1,18 @@
-from flask import Flask, render_template
-import requests
-
-# USE YOUR OWN npoint LINK! ADD AN IMAGE URL FOR YOUR POST. 👇
-posts = requests.get("https://api.npoint.io/c790b4d5cab58020d391").json()
-
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
 @app.route('/')
-def get_all_posts():
-    return render_template("index.html" )
+def home():
+    return render_template("index.html")
+
+
+@app.route("/login", methods=["POST"])
+def receive_data():
+    name = request.form["name"]
+    password = request.form["password"]
+    return f"<h1>Name: {name}, Password: {password}</h1>"
 
 
 if __name__ == "__main__":
-    app.run(debug=True )
+    app.run(debug=True)
